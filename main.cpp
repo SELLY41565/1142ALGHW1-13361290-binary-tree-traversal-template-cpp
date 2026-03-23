@@ -14,15 +14,27 @@ struct Node {
 };
 
 void preorder(Node* root) {
-    //TODO
+    // 前序遍歷：根節點 -> 左子樹 -> 右子樹
+    if (root == nullptr) return;
+    cout << root->data << " "; // 訪問根節點
+    preorder(root->left);      // 遞迴走訪左子樹
+    preorder(root->right);     // 遞迴走訪右子樹
 }
 
 void inorder(Node* root) {
-    //TODO
+    // 中序遍歷：左子樹 -> 根節點 -> 右子樹
+    if (root == nullptr) return;
+    inorder(root->left);       // 遞迴走訪左子樹
+    cout << root->data << " "; // 訪問根節點
+    inorder(root->right);      // 遞迴走訪右子樹
 }
 
 void postorder(Node* root) {
-    //TODO
+    // 後序遍歷：左子樹 -> 右子樹 -> 根節點
+    if (root == nullptr) return;
+    postorder(root->left);     // 遞迴走訪左子樹
+    postorder(root->right);    // 遞迴走訪右子樹
+    cout << root->data << " "; // 訪問根節點
 }
 
 void deleteTree(Node* root) {
